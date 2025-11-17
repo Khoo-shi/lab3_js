@@ -51,7 +51,7 @@ container.innerHTML = mustang.getInfo();
 // List to hold multiple cars
 let cars = [];
 
-// When button is clicked → create a new ToyCar
+// creates a new ToyCar
 document.getElementById("addCarBtn").addEventListener("click", function() {
 
     const car = new ToyCar(
