@@ -27,3 +27,23 @@ function ToyCar(name, scale, color, price, length, width, height, material, bran
         `;
     };
 }
+
+//  object
+const mustang = new ToyCar(
+    "1:24 2020 Ford Mustang GT",
+    "1:24",
+    "Black",
+    29.99,
+    19,
+    8,
+    6,
+    "Die-cast metal",
+    "ModelToyCars",
+    2020,
+    ["Opening doors", "Rubber tires", "Detailed interior"]
+);
+
+
+const container = document.getElementById("car-container");
+container.innerHTML = mustang.getInfo();
+
