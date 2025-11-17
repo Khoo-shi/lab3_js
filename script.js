@@ -47,3 +47,39 @@ const mustang = new ToyCar(
 const container = document.getElementById("car-container");
 container.innerHTML = mustang.getInfo();
 
+
+// List to hold multiple cars
+let cars = [];
+
+// When button is clicked → create a new ToyCar
+document.getElementById("addCarBtn").addEventListener("click", function() {
+
+    const car = new ToyCar(
+        document.getElementById("name").value,
+        document.getElementById("scale").value,
+        document.getElementById("color").value,
+        Number(document.getElementById("price").value),
+        Number(document.getElementById("length").value),
+        Number(document.getElementById("width").value),
+        Number(document.getElementById("height").value),
+        document.getElementById("material").value,
+        document.getElementById("brand").value,
+        Number(document.getElementById("year").value),
+        document.getElementById("features").value.split(",")
+    );
+
+    cars.push(car);
+    displayCars();
+});
+
+// Show all cars
+function displayCars() {
+    let output = "";
+
+    cars.forEach((c, i) => {
+        output += `<div><strong>Car ${i + 1}</strong><br>${c.getInfo()}</div><hr>`;
+    });
+
+    document.getElementById("car-list").innerHTML = output;
+}
+
